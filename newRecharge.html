@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+     
+    <style>
+        body{
+            padding: auto;
+            margin: auto;
+        }
+        #card{
+            width: 40%;
+            height: 40px;
+        }
+        #home{
+            width: 100%;
+            height: 100px;
+            background-color:lightblue;
+        }
+    </style>
+    <div id="home"></div>
+<div  style="width: 100%; display: flex; justify-content: space-around;">
+
+        <div style="border: 2px solid black; height: 50%; width: 50%;">
+
+            <select class="form-control" name="cardi" id="selector"  >
+                <option value="">RECHARGE CARD</option>
+                <option  value="MTN" style="background-color: yellow;">MTN</option>
+                <option  value="AIRTEL" style="background-color: red;">AIRTEL</option>
+                <option  value="GLO" style="background-color: lime;">GLO</option>
+                <option  value="ETISALAT" style="background-color: green;">ETISALAT</option>
+            </select><br><br>
+
+        <select class="form-control" name="" id="amount">        
+            <option value="">AMOUNT</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+        </select><br><br>
+
+
+           
+        <div style="border: 1px solid black; height: 40px; width: 40%;">
+            <h5 id="put">0</h5>
+            <!-- <input class="form-control" type="text" id="put"> -->
+
+        </div>
+        
+        <br><br>
+
+        <button class="btn btn-info" onclick="generate()">GENERATE PIN</button> &nbsp;
+        <button class="btn btn-primary" onclick="pushed()">SAVE PIN DETAILS</button> 
+        </div><br><br>
+
+
+            <div style="  width: 50%; height: 50%; ">
+                <input class="form-control" id="pen" value="" style="width: 100%; height: 50px;" placeholder="please load your card"><br>
+                <button  class="btn btn-danger" style="margin-left: 200px;" onclick="load()">RECHARGE YOUR CARD</button><br><br><br>
+                <h3 id="pop" style="color: green;"></h3>
+            </div>
+
+</div>
+
+
+
+<table class="table table-striped" style="margin-top: 30px; text-shadow: 2px 2px 5px rebeccapurple;">
+  <thead id="wet">
+   
+  </thead>
+    <tr>
+        <th>S/N</th>
+        <th>NETWORK PROVIDER</th>
+        <th>DATE PRINTED</th>
+        <th>AMOUNT</th>
+        <th>PIN</th>
+        <th>P.REF</th>
+        <th>STATUS</th>
+      </tr> 
+      <tbody id="paw">  
+   
+  </tbody>
+</table>
+
+
+
+<script>
+
+    // let a = 3.145
+    // console.log(Math.floor(a))
+    
+    
+    
+   // let voucher=[];
+    let myCard=[]
+     let loads = {MTN:'*555*',AIRTEL:'*126*',GLO:'*123*',ETISALAT:'*322*'}
+     
+        let selector=document.getElementById('selector')
+        let Amount=document.getElementById('amount')
+        let show=document.getElementById('put')
+        let printref=document.getElementById('ref')
+        let dat=document.getElementById('dat')
+        let pin=document.getElementById('pin')
+        let type=document.getElementById('type')
+        let pen = document.getElementById('pen')
+        let seen=false;
+        
+       
+        if(localStorage.getItem('storex')){
+            myCard=JSON.parse(localStorage.getItem('storex'));
+        }
+        else{
+            myCard=myCard;
+            localStorage.setItem('storex', JSON.stringify(myCard))
+        }
+         //codes= loads   
+           
+        
+        function pushed() {
+            let network=selector.value;
+            let money= amount.value
+            let term=new Date().toLocaleDateString()
+            let show=put.innerHTML
+            let recharge= `${loads[network]}${show}#` 
+            let status = 'unused'     
+            gen={provider:network,Amount:money,pin:show,Date:term,printref:recharge, status:status}
+            myCard.push(gen)
+            localStorage.setItem('storex',JSON.stringify(myCard))
+
+            // let newPincode={printref:recharge}
+            // myCard.push(newPincode);
+            // localStorage.setItem('myCard',JSON.stringify(myCard))
+            
+
+            display()  
+           
+        }
+       
+        function display() {
+            paw.innerHTML=''
+        myCard.forEach((element,i)=>{
+            paw.innerHTML+=`<tr>
+                        <td>${i+=1}</td>
+                        <td>${element.provider}</td>
+                        <td>${element.Date}</td>
+                        <td>${element.Amount}</td>                  
+                        <td>${element.pin}</td>                  
+                        <td>${element.printref}</td>
+                        <td>${element.status}</td>
+                        
+            </tr>`  
+    
+            
+        }) 
+        
+        }
+        // let saved = localStorage.getItem('storex')
+        //      if(saved){
+        //     voucher=JSON.parse(saved)
+            
+        //      }
+     
+    display();
+
+    seen=false
+     function load(){
+
+         if(pen.value == ''){
+            pop.innerHTML=`<div>
+                        <h4>Input a pin please</h4>
+                        </div>`
+                        return
+         }else if(myCard.printref !== pen.value){
+            pop.innerHTML=`<div><h4>invalid pin</h4></div>`
+         }
+         myCard.forEach((element, i) => {
+         if(pen.value === myCard[i].printref){
+             if(myCard[i].status=='used'){
+                pop.innerHTML=`<div>
+                         <h4>This card has already been Used</h4>
+                         </div>`
+                         return
+             }
+              
+             else{
+                pop.innerHTML=`<div>
+                         <h4>Recharge successful</h4>
+                         </div>`
+                        myCard[i].status='used'
+                        localStorage.setItem('storex',JSON.stringify(myCard))
+         }
+         }
+        });
+     }
+   
+
+
+         
+    let useful;
+    function generate() {
+        put.innerHTML=''
+        for(let i=0; i< 12; i++){
+        useful=Math.ceil(Math.random()*6);
+        document.getElementById('put').innerHTML+=useful    
+    }
+    }
+    
+     </script>
+</body>
+</html>
