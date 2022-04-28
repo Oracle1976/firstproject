@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body style="margin: 0px auto; padding: 0px;">
+    <div style="background-color: skyblue; border: 1px solid blue; height: 120px; width: 340px; position: absolute; top: 200px; left: 400px;" >
+        <div id="what" style="margin: 0 auto;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id="min" style="font-size: 80px;">00</span><span style="font-size: 30px;">:</span>
+             <span id="sec"  style="font-size: 80px;">00</span><span style="font-size: 30px;">:</span>
+             <span id="milli" style="font-size: 80px;">00</span>
+        </div><br>
+        <button id="lep" class="btn btn-success rounded">lap</button>
+        <button id="pause" class="btn btn-danger rounded " style="margin-left: 70px;">pause</button>
+        <button id="start" class="btn btn-primary" style="margin-left: 80px;" onclick="start()">start</button>
+    </div>
+
+        <div>
+            <div id="screen" style="overflow-y: scroll; border: 2px solid grey; height: 100px; width: 350px; position: absolute; top: 390px; left: 400px; background-color: orange;">
+                <span id="collect" style="font-size: 25px; font-weight: 900;" ></span>
+                <!-- <span id="min" >00</span>:
+                <span id="sec"  >00</span> -->
+            
+            </div>
+        </div>
+    <script>
+        let inp=1
+        let what=document.getElementById('what')
+        let btn=document.getElementById('start')
+        let milli=document.getElementById('milli')
+        let sec=document.getElementById('sec')
+        let min=document.getElementById('min')
+        let collect=document.getElementById('collect')
+        console.log(collect)
+          time=0
+        function start() {
+         btn.innerHTML='start'
+        time=''
+       hold=setInterval(() => {
+        
+       time++
+        milli.innerHTML=time
+        
+         if (milli.innerHTML==99) {
+          time=''
+             sec.innerHTML++
+             if (sec.innerHTML==59) {
+                 time=''
+                 sec.innerHTML='00'
+                 min.innerHTML++
+             }else if(min.innerHTML==9){
+                 time=''
+                clearInterval(hold)
+                what.innerHTML=`<h3>00:00:00</h3>`
+                
+             }  
+             
+         }
+         
+        
+        
+            }, 100);
+        }
+       
+        function Time() {
+         millis=milli <100 ?'00'+ milli : milli
+           secs= sec < 10 ? '0'+ sec : sec
+           mins=min < 10 ? '0'+ min : min
+            }
+
+            Time()
+            
+            
+          
+
+ pause.addEventListener('click',()=>{
+    clearInterval(hold)  
+
+  })
+
+//   function pause(params) {
+//      let pause=document.getElementById('pause')
+
+//      clearInterval()
+//   }
+
+i=0
+collect=document.getElementById('collect')
+lep.addEventListener('click', ()=>{
+    collect.innerHTML+=`${inp++}. ${min.innerHTML}:${sec.innerHTML}:${milli.innerHTML} <br>`
+    
+})
+// function lap() {
+//     for (let index = 0; index < time.length; index--) {
+//     collect.innerHTML+=`${inp++}. ${min.innerHTML}:${sec.innerHTML}:${milli.innerHTML} <br>`
+        
+        
+//     }
+// }
+// lap()
+
+
+        // what.addEventListener('click', ()=>{
+        //     console.log('it was clicked')
+        // })
+
+    </script>
+</body>
+</html>
