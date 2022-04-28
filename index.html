@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jav.js"></script>
+</head>
+<script type="text/javascript">
+   let n="2"
+   let m=2
+   let o=m%n
+   console.log(++m)
+m+=n
+console.log(m)
+let answ=m>=n
+
+let ans=m!==n
+
+ ans=m!=n || m>n && n===m && m>n || m
+console.log(ans)
+
+if((m!=n || m>n) && (n===m && m>n) || m){
+    alert('Ans is true')
+    } else{
+        alert("Ans is false")
+    }
+
+let anss=2
+if(anss==2){
+    alert('Ans is true ans ==')
+}
+else if(anss>=2){
+    alert('Ans is true and >')
+}
+else{
+    alert('Ans is false')
+}
+
+
+
+let answer='yes'
+for(let i=0; i<1234; i++){
+    if(i%2==='0'){
+        answer=0
+    }
+}
+console.log('their will be no life again')
+
+
+function greetSamuel(){
+    console.log('Hello Mr Sam!!!')
+}
+greetSamuel()
+
+
+
+function temterature(a,b){
+     c= a+b
+    console.log(c, 'from function');
+    // console.log(c);
+    return c
+}
+temterature(3,4);
+
+
+function times(x,y){
+   z= x * y
+console.log(z, 'from function')
+return z
+}
+times(4,3)
+times(2,3)
+times(4,4)
+times(4,8)
+
+const noisy = function(a,b){
+    console.log('hurray')
+}
+noisy()
+
+
+
+const power = function(base, exponent){
+    let result =1
+    for(let count = 0; count < exponent; count++){
+      result *= base  
+    }
+    return result;
+}
+console.log(power(2,5))
+console.log(power(2,10))
+console.log(power(204,10))
+
+
+let exponent = 30
+let base = 2
+multiply = exponent * base
+console.log(multiply)
+
+
+
+function multiplyNumber(){
+    let x = 5
+    let y = 10
+    let z = x * y
+    console.log(z)
+}
+multiplyNumber()
+
+
+function addTwoNumbers() {
+  let numOne = 10
+  let numTwo = 20
+  let sum = numOne + numTwo
+  console.log(sum)
+}
+addTwoNumbers()
+
+
+function printFullName (){
+      let firstName = 'Asabeneh'
+      let lastName = 'Yetayeh'
+      let space = ' '
+      let fullName = firstName + space + lastName
+      console.log(fullName)
+}
+
+printFullName()
+
+
+function areaOfCircle(r) {
+  let area = Math.PI * r * r
+  return area
+}
+console.log(areaOfCircle(10))
+
+
+
+function addition(a,b){
+    sum = a + b
+    return sum    
+}
+// console.log(addition(3,5)) // note: if you pass your argument into
+// console then the console stay outside the curly bracket but if not 
+//inside console you call it outside the curly bracket with function name declared
+
+
+function greet(x){
+    alert(' i love ' + x)
+    // console.log('alert')
+}
+greet('Davies')
+
+
+
+function sumArrayValues(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+const numbers = [1, 2, 3, 4, 5];
+    //calling a function
+console.log(sumArrayValues(numbers));
+
+
+
+var x = 0
+while(x<1000){ 
+document.write(x + ' i love apples <br>')
+    x++
+}
+
+
+//  let x = 0
+//  for(x=1; x<=20; x++)
+//  console.log(x)
+
+// for(x=1; x<=50; x++){
+//     document.write(`${x} * ${x} = ${x * x} <br>`)
+    
+// }
+
+
+function sumArrayValues(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+ numbers = [1, 2, 3, 4, 5];
+    //calling a function
+console.log(sumArrayValues(numbers));
+
+const addNumber= (arg) =>{
+    
+console.log(arg)
+}
+addNumber((2,3,5))
+
+
+const sumAllNums = (...args) => {
+  let sum = 0
+  for (const element of args) {
+    sum += element
+  }
+  return sum
+}
+
+console.log(sumAllNums(1, 2, 3, 4))
+console.log(sumAllNums(3, 2, 3, 4))
+
+const numberAdd = (...arg)=>{
+    let add = 1
+    for(const element of arg){
+        add+=element
+    }
+    return add
+}
+console.log(numberAdd(4,6,9,3,5))
+
+let person = {
+    name : 'Toluwani',
+    age : 4,
+    school : 'st marthes academy',
+    food: 'rice and beans',   
+};
+
+// dot notation
+person.name = 'Adesanya Toluwani';
+
+
+ // bracket notation
+person["name"]= 'Adesewa Toluwani'
+console.log(person)
+console.log(person.name)
+
+
+
+// function person(x){
+//     console.log(x)
+// }
+person('Tolu' +''+ ' is a beautiful girl')
+
+
+function calculate(){
+     F=60
+    C = (F - 32) * 5/9
+    for(n=0; n<=60; n++)
+    console.log(C)
+}
+calculate()
+
+
+function temterature(a,b){
+     c= a*b/a
+    console.log(c);
+    return c
+}
+temterature(3,4);
+
+const displayName = (...arg) => {
+console.log(arg);
+}
+displayName('I am a winner', 'I am free');
+
+const sumUp = (...arg) => {
+    let add =0
+    for(const element of arg){
+        add += element
+    }
+    // return add
+    console.log(add)
+    // alert(add)
+}
+sumUp(10,15,12)
+
+function calc(n){
+    let a=0
+    for(x=0; x<=10; x++){
+        console.log(`${x} * ${x} = ${x * x}`)
+    }
+    return x
+}
+calc(n)
+
+const add = (...arg) => {
+    let sum =0
+    for(const element of arg){
+        sum += element
+    }
+    // return sum
+    // console.log(sum)
+    alert(sum)
+}
+add(1,2,3)
+
+
+function run(name1=0,name2=0){
+    let a= name1+name2
+    let i=document.querySelector('#oinp');
+    let x=document.querySelector('#inpt')
+x.value=i.value
+i.value=""
+
+
+// document.getElementById(oinp)
+// console.log(oinp.value.type)
+// console.log(i.value, i.type)
+}
+run()
+
+
+document.getElementById("best").innerText = 5
+   
+function greet(name1=0, name2=0){
+
+    let i = document.querySelector('oops');
+    i.innerHTML="<i>Whats good</i>"
+     console.log(i.innerHTML)
+}
+
+function greet(name1=0, name2=0){
+    let a= name1+name2
+
+    let input_box = document.querySelector('#put');
+    let text = document.querySelector('#heh');
+    text.innerHTML =   input_box.value
+}
+greet()
+
+function resolve(){
+    
+    // let H= "";
+    let input_box1 = document.getElementById('car1');
+    let input_box2 = document.getElementById('bus');
+    let input_box3 = document.getElementById('car2');
+    let h1 = document.getElementById('result');
+    //.getElementById('result').value = car1 + car2
+    if (isNaN(parseInt(input_box1.value)) || isNaN(parseInt(input_box3.value))) {
+        alert('Invalid');
+        return;
+    }
+
+    if(input_box2.value =='+'){
+         h1.innerHTML = parseInt(input_box1.value) + parseInt(input_box3.value)
+    }
+    else  if (input_box2.value =='*') {
+        h1.innerHTML = parseInt(input_box1.value) * parseInt(input_box3.value)
+    }
+    else if (input_box2.value =='/'){
+        h1.innerHTML = parseint(input_box1.value) / parseInt(input_box3.value)
+    }
+    else if (input_box2.value =='-'){
+        h1.innerHTML = parseInt(input_box1.value) - parseInt(input_box3.value)
+    }
+    else {
+
+        // h1.innerHTML= parseInt(input_box1.value) + parseInt(input_box3.value)
+        // alert('this number is not valid') 
+    }
+
+    
+//   document.getElementById('#result').innerHTML= h1
+}
+
+
+
+
+
+// let flag = false;
+
+// function run(){
+// let signs =["+", "-", "/",  " %", "*"];
+
+// let display = document.getElementById("answer");
+
+// let num1 = document.getElementById("first").value;
+
+// let num2 = document.getElementById("second").value;
+
+// let operate = document.getElementById("sign").value;
+
+// If (operate.includes(signs) &&!isNaN(num1) && !isNaN(num2))
+// {
+// flag=true;
+// }
+// else(flag=false){
+
+// }
+
+// if(flag){
+// if(operate ==="+"){
+//  display.innerHTML=num1 + num2;
+// }else if(operate ==="-"){
+// display.innerHTML=num1 - num2;
+// }else if(operate === "/"){
+// display.innerHTML=num1 / num2;
+//  }else if(operate === "*"){
+// display.innerHTML=num1 * num2;
+// }else{
+// display.innerHTML="Math error";
+// }
+// }else{
+// alert("You have entered a non number input or your operator is not a basic math sign");
+// }
+
+// }
+let bb = 33 
+let cc ='6'
+console.log(`bb+${cc}`) // ${} is used in process of concatenation
+console.log(Number(cc))
+
+// let count = 0;
+// function greet(name=1, name=2)
+
+
+// let r = 123456789
+// console.log(count++)
+
+
+
+    let box1 = document.getElementById('box1');
+    let box2 = document.getElementById('box2');
+    let box3 = document.getElementById('box3');
+    let h1 = document.getElementById('answer');
+
+function solution(){
+    if (isNaN(parseInt(box1.value)) || isNaN(parseInt(box3.value))){
+        alert ('invalid number')
+
+        return
+    }
+    
+
+    if(box2.value == '+'){
+        h1.innerHTML= parseInt(box1.value) + parseInt(box3.value)
+    }
+
+    else if (box2.value == '-' ){
+        h1.innerHTML =  parseInt(box1.value) - parseInt(box3.value)
+    }
+    else if (box2.value == '*'){
+        h1.innerHTML =  parseInt(box1.value) * parseInt(box3.value)
+    }
+
+    else if (box2.value == '/'){
+        h1.innerHTML =  parseInt(box1.value) / parseInt(box3.value)
+        h1.innerHTML = ''
+    }
+}
+
+// concatenation
+let firstName = 'Toluwani'
+console.log(firstName.concat('Adesanya'))
+
+let country = 'Fin'
+console.log(country.concat('land'))
+
+
+
+
+
+
+
+</script>_
+<style>
+     #xp{
+        background-color: royalblue; 
+        color: white; 
+        width: 20%; 
+        height: 40px; 
+        border: none; 
+        border-radius: 30px; 
+     } 
+     #btn-increment{
+         width: 150px;
+         height: 70px;
+         color: white;
+         background-color: darkmagenta;
+         border-radius: 10px;
+         font-weight: 600;
+     }
+     #btn-save{
+        width: 150px;
+         height: 50px;
+         color: white;
+         background-color:  green;
+     }
+    
+</style>
+
+<body> <br><br>
+    <form action="">
+        <input id="xp" type="button" value="Click" onclick="person('Tolu' +''+ ' is a beautiful girl')">
+    </form>
+
+    <br><br>
+
+    <button id="xp" onmousemove="calculate()">Mouse Move</button>
+    <br><br>
+
+<button id="xp" onmouseout="temterature(3,4)" >Mouse Out</button>
+ <br><br>
+
+<button id="xp" onmouseenter="displayName('I am a winner', 'I am free');">Mouse Enter</button>
+<br><br>
+
+ <button id="xp" onclick="alert(sum)">addUp</button> <br><br>
+
+<button id="xp" onkeydown="sumUp(10,15,12)">Onkeydown</button><br><br>
+ <button id="xp" onfocus="add(1,2,3)">Onfocus</button><br> <br>
+
+<div id="app" style="width: 100px;height: 100px;  " contenteditable="">i can now write on a div</div>
+
+ <input oninput="greet()" type="text" name="" id="oinp" value="2000">
+<input  type="text" name="" id="oinp" value=""><br><br>
+
+
+<input   type="text" name="" id="inpt" value="">
+<input type="text" name="" id="" value=""> 
+<button id="xp" onclick="run()">cut text</button><br><br>
+
+
+<h1>people enter:</h1>
+<h2 id="best">0</h2>
+<button id="btn-increment" onclick="increment()">Increments</button>
+<button id="btn-save">Save</button><br><br>
+    
+
+<h1 id="oops">HELLO WORLD
+    <i>whats good</i>
+</h1><br><br>
+
+
+<input type="text" id="put" value="" oninput="greet()">
+<h1 id="heh">LIFE IS GOOD</h1><br><br>
+
+
+<input id="car1" type="text" name="car1"  value="">
+<input id="bus" type="text" name="bus"  value="">
+<input id="car2" type="text" name="car2"  value="">
+<button  onclick="resolve()">calculate</button>
+<h1 id="result"></h1>
+
+<h1 id="answer"></h1>
+
+<!-- 
+<input type="text" id="first" name="numberOne"  placeholder="Enter the first value">
+<input type="text" id="sign" name="operator" placeholder="Enter sign to compute values">
+<input type="text" id="second"  name="numberTwo" placeholder="Enter the second value">
+<button onclick="run()">Calculate</button> -->
+
+<br><br><br><br>
+
+
+<input  id="box1" type="text" name="box1">
+<input  id="box2" type="text" name="box2">
+<input id="box3"  type="text" name="box3">
+<button onclick="solution()">solve</button>
+<h1 id="answer"></h1>
+<br><br><br>
+</body>
+</html>
